@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Personal Website</title>
+  <meta name="description" content="A polished personal landing page." />
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #0f172a;
+      --panel: #111827;
+      --panel-2: #1f2937;
+      --text: #e5eefb;
+      --muted: #bfdbfe;
+      --accent: #38bdf8;
+      --accent-2: #818cf8;
+    }
+
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top, rgba(56, 189, 248, 0.12), transparent 28%),
+        linear-gradient(135deg, var(--bg), #172554 55%, #111827 100%);
+      min-height: 100vh;
+    }
+
+    .page {
+      width: min(1100px, calc(100% - 2rem));
+      margin: 0 auto;
+      padding: 32px 0 64px;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 32px;
+    }
+
+    .brand {
+      font-size: 1.1rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    nav a {
+      color: var(--text);
+      text-decoration: none;
+      margin-left: 16px;
+      opacity: 0.9;
+    }
+
+    nav a:hover { color: var(--accent); }
+
+    main {
+      display: grid;
+      gap: 24px;
+    }
+
+    .card {
+      background: rgba(17, 24, 39, 0.88);
+      border: 1px solid rgba(148, 163, 184, 0.18);
+      border-radius: 24px;
+      padding: 28px;
+      box-shadow: 0 18px 40px rgba(15, 23, 42, 0.35);
+      backdrop-filter: blur(8px);
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 24px;
+      align-items: center;
+    }
+
+    h1 {
+      font-size: clamp(2.4rem, 6vw, 4rem);
+      line-height: 1.05;
+      margin: 0 0 12px;
+    }
+
+    .lead {
+      color: var(--muted);
+      font-size: 1.05rem;
+      max-width: 54ch;
+      margin-bottom: 18px;
+    }
+
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 18px;
+    }
+
+    .pill {
+      border: 1px solid rgba(56, 189, 248, 0.25);
+      background: rgba(15, 23, 42, 0.8);
+      color: var(--text);
+      padding: 8px 12px;
+      border-radius: 999px;
+      font-size: 0.95rem;
+    }
+
+    .mini-card {
+      background: linear-gradient(160deg, rgba(56, 189, 248, 0.12), rgba(129, 140, 248, 0.12));
+      border: 1px solid rgba(125, 211, 252, 0.18);
+      border-radius: 18px;
+      padding: 18px;
+    }
+
+    .mini-card h2, .card h2 {
+      margin-top: 0;
+      margin-bottom: 10px;
+      font-size: 1.15rem;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    ul { padding-left: 18px; color: var(--muted); }
+    a { color: var(--accent); }
+
+    footer {
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.95rem;
+      margin-top: 12px;
+    }
+
+    @media (max-width: 860px) {
+      .hero, .grid-2 { grid-template-columns: 1fr; }
+      header { flex-direction: column; align-items: flex-start; }
+      nav a { margin-left: 0; margin-right: 14px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header>
+      <div class="brand">My Personal Site</div>
+      <nav>
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <article class="card">
+          <p class="brand">Welcome</p>
+          <h1>Building simple, useful things on the web.</h1>
+          <p class="lead">This page is now a finished landing page with a clean layout, clear sections, and an inviting design for visitors.</p>
+          <div class="pill-row">
+            <span class="pill">HTML</span>
+            <span class="pill">CSS</span>
+            <span class="pill">Responsive</span>
+            <span class="pill">Ready to publish</span>
+          </div>
+        </article>
+
+        <aside class="card mini-card">
+          <h2>Quick facts</h2>
+          <ul>
+            <li>Single-page personal website</li>
+            <li>Modern visual style with accessible contrast</li>
+            <li>Works well on desktop and mobile</li>
+          </ul>
+        </aside>
+      </section>
+
+      <section class="grid-2" id="about">
+        <article class="card">
+          <h2>About</h2>
+          <p>This site is a simple starting point for showcasing your work, interests, or contact details. It is lightweight, easy to maintain, and ready for deployment.</p>
+        </article>
+        <article class="card" id="projects">
+          <h2>Projects</h2>
+          <p>Use this area to highlight your latest work, portfolio pieces, or ideas you are currently exploring.</p>
+        </article>
+      </section>
+
+      <section class="card" id="contact">
+        <h2>Contact</h2>
+        <p>Replace this text with your email, social links, or a short note about how people can reach you.</p>
+      </section>
+    </main>
+
+    <footer>Created with a simple HTML/CSS landing page.</footer>
+  </div>
+</body>
+</html>
